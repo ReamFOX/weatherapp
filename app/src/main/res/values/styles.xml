@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextH1">
+        <item name="fontFamily">@font/manrope_light</item>
+        <item name="android:textSize">96sp</item>
+    </style>
+
+    <style name="TextH2">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextH3">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BuddyText">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SmallTextRegular">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SmallTextBold">
+        <item name="fontFamily">@font/manrope_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ButtonText">
+        <item name="fontFamily">@font/manrope</item>
+        <item name="android:textSize">16pt</item>
+    </style>
+
+</resources>

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="settings_button_desc">Settings</string>
+    <string name="search_button_desc">Search</string>
+    <string name="today">Today</string>
+    <string name="view_more">View more</string>
+    <string name="seven_days">7 days</string>
+    <string name="fourteen_days">14 days</string>
+    <string name="wind">Wind</string>
+    <string name="precipitation">Precipitation</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
 </resources>
