@@ -1,19 +1,17 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.main;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.GravityCompat;
 import androidx.databinding.DataBindingUtil;
 
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.MyPagerAdapter;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.R;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.databinding.ActivityMainBinding;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.view.adapter.MyPagerAdapter;
 
 import java.util.List;
 
@@ -26,11 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         ArrayAdapter<CharSequence> spinnerAdapter =
                 ArrayAdapter.createFromResource(this, R.array.spinner, R.layout.spinner_item);
@@ -43,6 +36,18 @@ public class MainActivity extends AppCompatActivity {
             List<String> titles = List.of("Today", "7 days", "14 days");
             tab.setText(titles.get(position));
         }).attach();
+
+        binding.settingsButton.setOnClickListener(view -> {
+            if (binding.settingsMenu.isDrawerOpen(GravityCompat.START)) {
+                binding.settingsMenu.closeDrawer(GravityCompat.START);
+            } else {
+                binding.settingsMenu.openDrawer(GravityCompat.START);
+            }
+        });
+
+        binding.searchButton.setOnClickListener(view -> {
+
+        });
     }
 
 

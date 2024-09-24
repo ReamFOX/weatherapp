@@ -7,7 +7,7 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.TodayFragment">
+    tools:context=".view.TodayFragment">
 
 
     <TextView
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/weather_decs"
+        android:id="@+id/condition"
         style="@style/TextH3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
         android:layout_marginTop="@dimen/small_indent"
         android:text="12°/20°"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weather_decs" />
+        app:layout_constraintTop_toBottomOf="@+id/condition" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
