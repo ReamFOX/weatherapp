@@ -1,13 +1,13 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.api;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.api;
 
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.model.WeatherData;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model.WeatherData;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
-public interface ApiService {
+public interface WeatherApiService {
     @GET("{location}")
     Call<WeatherData> getWeatherData(@Path("location") String location,
                                      @Query("unitGroup") String unit,

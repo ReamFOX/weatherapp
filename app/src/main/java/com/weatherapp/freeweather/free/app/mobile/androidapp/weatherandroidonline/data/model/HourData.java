@@ -1,8 +1,8 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.model;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model;
 
 import java.util.List;
 
-public class CurrentConditions {
+public class HourData {
     private String datetime;
     private long datetimeEpoch;
     private double temp;
@@ -10,7 +10,7 @@ public class CurrentConditions {
     private double humidity;
     private double dew;
     private double precip;
-    private int precipprob;
+    private double precipprob;
     private double snow;
     private double snowdepth;
     private List<String> preciptype;
@@ -18,7 +18,7 @@ public class CurrentConditions {
     private double windspeed;
     private double winddir;
     private double pressure;
-    private Double visibility;
+    private double visibility;
     private double cloudcover;
     private double solarradiation;
     private double solarenergy;
@@ -28,11 +28,6 @@ public class CurrentConditions {
     private String icon;
     private List<String> stations;
     private String source;
-    private String sunrise;
-    private long sunriseEpoch;
-    private String sunset;
-    private long sunsetEpoch;
-    private double moonphase;
 
     public String getDatetime() {
         return datetime;
@@ -90,11 +85,11 @@ public class CurrentConditions {
         this.precip = precip;
     }
 
-    public int getPrecipprob() {
+    public double getPrecipprob() {
         return precipprob;
     }
 
-    public void setPrecipprob(int precipprob) {
+    public void setPrecipprob(double precipprob) {
         this.precipprob = precipprob;
     }
 
@@ -154,11 +149,11 @@ public class CurrentConditions {
         this.pressure = pressure;
     }
 
-    public Double getVisibility() {
+    public double getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(Double visibility) {
+    public void setVisibility(double visibility) {
         this.visibility = visibility;
     }
 
@@ -232,45 +227,5 @@ public class CurrentConditions {
 
     public void setSource(String source) {
         this.source = source;
-    }
-
-    public String getSunrise() {
-        return sunrise;
-    }
-
-    public void setSunrise(String sunrise) {
-        this.sunrise = sunrise;
-    }
-
-    public long getSunriseEpoch() {
-        return sunriseEpoch;
-    }
-
-    public void setSunriseEpoch(long sunriseEpoch) {
-        this.sunriseEpoch = sunriseEpoch;
-    }
-
-    public String getSunset() {
-        return sunset;
-    }
-
-    public void setSunset(String sunset) {
-        this.sunset = sunset;
-    }
-
-    public long getSunsetEpoch() {
-        return sunsetEpoch;
-    }
-
-    public void setSunsetEpoch(long sunsetEpoch) {
-        this.sunsetEpoch = sunsetEpoch;
-    }
-
-    public double getMoonphase() {
-        return moonphase;
-    }
-
-    public void setMoonphase(double moonphase) {
-        this.moonphase = moonphase;
     }
 }

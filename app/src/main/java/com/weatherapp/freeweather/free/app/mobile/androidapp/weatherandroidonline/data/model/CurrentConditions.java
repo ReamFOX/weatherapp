@@ -1,8 +1,8 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.model;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model;
 
 import java.util.List;
 
-public class HourData {
+public class CurrentConditions {
     private String datetime;
     private long datetimeEpoch;
     private double temp;
@@ -10,7 +10,7 @@ public class HourData {
     private double humidity;
     private double dew;
     private double precip;
-    private double precipprob;
+    private int precipprob;
     private double snow;
     private double snowdepth;
     private List<String> preciptype;
@@ -18,7 +18,7 @@ public class HourData {
     private double windspeed;
     private double winddir;
     private double pressure;
-    private double visibility;
+    private Double visibility;
     private double cloudcover;
     private double solarradiation;
     private double solarenergy;
@@ -28,6 +28,11 @@ public class HourData {
     private String icon;
     private List<String> stations;
     private String source;
+    private String sunrise;
+    private long sunriseEpoch;
+    private String sunset;
+    private long sunsetEpoch;
+    private double moonphase;
 
     public String getDatetime() {
         return datetime;
@@ -85,11 +90,11 @@ public class HourData {
         this.precip = precip;
     }
 
-    public double getPrecipprob() {
+    public int getPrecipprob() {
         return precipprob;
     }
 
-    public void setPrecipprob(double precipprob) {
+    public void setPrecipprob(int precipprob) {
         this.precipprob = precipprob;
     }
 
@@ -149,11 +154,11 @@ public class HourData {
         this.pressure = pressure;
     }
 
-    public double getVisibility() {
+    public Double getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(double visibility) {
+    public void setVisibility(Double visibility) {
         this.visibility = visibility;
     }
 
@@ -227,5 +232,45 @@ public class HourData {
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public String getSunrise() {
+        return sunrise;
+    }
+
+    public void setSunrise(String sunrise) {
+        this.sunrise = sunrise;
+    }
+
+    public long getSunriseEpoch() {
+        return sunriseEpoch;
+    }
+
+    public void setSunriseEpoch(long sunriseEpoch) {
+        this.sunriseEpoch = sunriseEpoch;
+    }
+
+    public String getSunset() {
+        return sunset;
+    }
+
+    public void setSunset(String sunset) {
+        this.sunset = sunset;
+    }
+
+    public long getSunsetEpoch() {
+        return sunsetEpoch;
+    }
+
+    public void setSunsetEpoch(long sunsetEpoch) {
+        this.sunsetEpoch = sunsetEpoch;
+    }
+
+    public double getMoonphase() {
+        return moonphase;
+    }
+
+    public void setMoonphase(double moonphase) {
+        this.moonphase = moonphase;
     }
 }

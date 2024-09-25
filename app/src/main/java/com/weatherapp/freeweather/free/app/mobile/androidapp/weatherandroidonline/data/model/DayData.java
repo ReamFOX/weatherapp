@@ -1,4 +1,4 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.model;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model;
 
 import java.util.List;
 
