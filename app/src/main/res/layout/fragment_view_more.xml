@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/view_more_forecast"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_rain"
         android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/background_rain">
+        android:focusable="true">
 
         <ImageButton
             android:id="@+id/back_button"
@@ -35,10 +35,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.gridlayout.widget.GridLayout
-            android:layout_width="match_parent"
+            android:id="@+id/hourly_detailed_forecast"
+            android:layout_width="0dp"
             android:layout_height="0dp"
+            android:padding="@dimen/_16dp"
+            android:paddingStart="36dp"
+            app:columnCount="3"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/city_name">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/city_name"
+            app:rowCount="4">
 
         </androidx.gridlayout.widget.GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

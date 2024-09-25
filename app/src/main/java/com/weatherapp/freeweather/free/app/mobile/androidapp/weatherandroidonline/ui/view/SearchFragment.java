@@ -29,6 +29,7 @@ public class SearchFragment extends Fragment {
         binding = FragmentSearchBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -39,7 +40,7 @@ public class SearchFragment extends Fragment {
                 String cityName = binding.searchInput.getText().toString();
                 String filteredCityName = formatCityName(cityName);
                 if (filteredCityName.isBlank()) {
-                    Toast.makeText(getActivity(), "Can't find city " + cityName, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Please enter the valid city name", Toast.LENGTH_SHORT).show();
                 } else {
                     viewModel.loadWeather(filteredCityName);
                 }
@@ -51,11 +52,9 @@ public class SearchFragment extends Fragment {
 
     private static String formatCityName(String cityName) {
         String cleanedName = cityName.replaceAll("[^a-zA-Z0-9\\s-']", "").trim();
-
-        if (cleanedName.isEmpty()) {
+        if (cleanedName.isBlank()) {
             return cleanedName;
         }
-
         return cleanedName.substring(0, 1).toUpperCase() + cleanedName.substring(1).toLowerCase();
     }
 }

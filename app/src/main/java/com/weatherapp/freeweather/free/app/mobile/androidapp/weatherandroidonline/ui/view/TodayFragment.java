@@ -20,7 +20,7 @@ import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonlin
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model.WeatherData;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.databinding.FragmentTodayBinding;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.main.WeatherViewModel;
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.utils.Const;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.utils.ForecastUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -48,16 +48,20 @@ public class TodayFragment extends Fragment {
         // Update ui from LiveData
         viewModel.loadWeather(viewModel.getCurrentCity().getValue()).observe(getViewLifecycleOwner(), weatherData -> {
             if (weatherData != null) {
-                binding.temperatureText.setText(String.format("%s°", weatherData.getCurrentConditions().getTemp()));
+                binding.temperatureText.setText(
+                        getString(R.string.temp_value, weatherData.getCurrentConditions().getTemp())
+                );
                 binding.condition.setText(weatherData.getCurrentConditions().getConditions());
-                binding.temperatureMinMax.setText(String.format("%s°/%s°",
+                binding.temperatureMinMax.setText(getString(R.string.min_max_temp_value,
                         weatherData.getDays().get(0).getTempmin(),
                         weatherData.getDays().get(0).getTempmax()));
-                addHourlyForecast(weatherData, 5);
-                binding.windValue.setText(weatherData.getCurrentConditions().getWindspeed() + " km/h");
-                binding.humidityValue.setText(weatherData.getCurrentConditions().getHumidity() + "%");
-                binding.precipitationValue.setText(weatherData.getCurrentConditions().getPrecip() + "%");
-                binding.pressureValue.setText(weatherData.getCurrentConditions().getPressure() + " mbar");
+                addHourlyForecast(weatherData);
+                binding.windValue.setText(
+                        getString(R.string.wind_value,weatherData.getCurrentConditions().getWindspeed())
+                );
+                binding.humidityValue.setText(getString(R.string.value_with_persentage, weatherData.getCurrentConditions().getHumidity()));
+                binding.precipitationValue.setText(getString(R.string.value_with_persentage, weatherData.getCurrentConditions().getPrecip()));
+                binding.pressureValue.setText(getString(R.string.pressure_value, weatherData.getCurrentConditions().getPressure()));
             }
         });
 
@@ -76,25 +80,25 @@ public class TodayFragment extends Fragment {
         });
     }
 
-    private void addHourlyForecast(WeatherData weatherData, int cardQuantity) {
+    private void addHourlyForecast(WeatherData weatherData) {
         binding.hourlyForecast.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(requireActivity());
         long currentTimeEpoch = System.currentTimeMillis() / 1000L;
 
         List<HourData> todayHours = weatherData.getDays().get(0).getHours();
         List<HourData> tomorrowHours = weatherData.getDays().get(1).getHours();
-
+        int limit = 5;
         int hourCounter = 0;
 
         for (HourData hourData : todayHours) {
-            if (hourData.getDatetimeEpoch() > currentTimeEpoch && hourCounter < cardQuantity) {
+            if (hourData.getDatetimeEpoch() > currentTimeEpoch && hourCounter < limit) {
                 addHourlyCard(inflater, hourData, hourCounter == 0);
                 hourCounter++;
             }
         }
-        if (hourCounter < cardQuantity) {
+        if (hourCounter < limit) {
             for (HourData hourData : tomorrowHours) {
-                if (hourCounter < cardQuantity) {
+                if (hourCounter < limit) {
                     addHourlyCard(inflater, hourData, hourCounter == 0);
                     hourCounter++;
                 } else {
@@ -107,8 +111,9 @@ public class TodayFragment extends Fragment {
     private void addHourlyCard(LayoutInflater inflater, HourData hourData, boolean isNow) {
         View hourlyCard = inflater.inflate(R.layout.item_hourly_forecast, binding.hourlyForecast, false);
 
-        String temperature = String.format("%.1f°", hourData.getTemp());
-        int iconResId = getIconResource(hourData.getConditions());
+        String temperature = getString(R.string.temp_value, hourData.getTemp());
+
+        int iconResId = ForecastUtil.getIcon(hourData.getIcon());
         ImageView hourlyIcon = hourlyCard.findViewById(R.id.hourly_icon);
         TextView hourlyTemperature = hourlyCard.findViewById(R.id.hourly_temperature);
         TextView hourlyTime = hourlyCard.findViewById(R.id.hourly_time);
@@ -117,7 +122,7 @@ public class TodayFragment extends Fragment {
         hourlyIcon.setImageResource(iconResId);
 
         if (isNow) {
-            hourlyTime.setText("Now");
+            hourlyTime.setText(getString(R.string.now));
         } else {
             hourlyTime.setText(hourData.getDatetime().substring(0, 5));
         }
@@ -130,18 +135,13 @@ public class TodayFragment extends Fragment {
         );
 
         if (binding.hourlyForecast.getChildCount() == 0) {
-            params.setMargins(0, 0, margin, 0);
+            params.setMargins(0, margin, margin, margin);
         } else if (binding.hourlyForecast.getChildCount() == 4) {
-            params.setMargins(margin, 0, 0, 0);
+            params.setMargins(margin, margin, 0, margin);
         } else {
-            params.setMargins(margin, 0, margin, 0);
+            params.setMargins(margin, margin, margin, margin);
         }
 
         binding.hourlyForecast.addView(hourlyCard, params);
-    }
-
-    private int getIconResource(String conditions) {
-        //TODO: add logic for ico switching
-        return R.drawable.ic_cloud;
     }
 }

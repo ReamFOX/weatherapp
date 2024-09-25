@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
         spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
         binding.spinner.setAdapter(spinnerAdapter);
 
+        // fetch weather for default city by first
         WeatherApiService weatherApiService =
                 RetrofitClientInstance.getRetrofitInstance().create(WeatherApiService.class);
         WeatherDataRepository weatherDataRepository = new WeatherDataRepository(weatherApiService);
         viewModel = new ViewModelProvider(this,
                 new ViewModelFactory(weatherDataRepository)).get(WeatherViewModel.class);
-        viewModel.loadWeather("Kyiv");
 
         // fetch weather by selecting city from dropdown menu
         binding.spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

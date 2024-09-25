@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModel;
 
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model.WeatherData;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.repository.WeatherDataRepository;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.utils.Const;
 
 import java.util.Objects;
 
@@ -29,7 +30,7 @@ public class WeatherViewModel extends ViewModel {
     public WeatherViewModel(WeatherDataRepository weatherDataRepository) {
         this.weatherDataRepository = weatherDataRepository;
         this.weatherData = new MutableLiveData<>();
-        this.currentCity = new MutableLiveData<>("Kyiv");
+        this.currentCity = new MutableLiveData<>(Const.DEFAULT_CITY);
         this.errorData = weatherDataRepository.getError();
     }
 
