@@ -34,14 +34,17 @@ android {
 }
 
 dependencies {
-
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.gridlayout)
     testImplementation(libs.junit)
+    implementation(libs.lifecycle.livedata)
+    implementation(libs.lifecycle.viewmodel)
+    annotationProcessor(libs.lifecycle.compiler)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 }

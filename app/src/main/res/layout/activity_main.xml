@@ -8,18 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/background_rain"
-            tools:context=".main.MainActivity">
+            tools:context=".ui.main.MainActivity">
 
             <LinearLayout
                 android:id="@+id/top_panel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/medium_indent"
+                android:layout_marginHorizontal="@dimen/_16dp"
                 android:layout_marginTop="50dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +65,7 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_indent"
+                android:layout_marginTop="@dimen/_8dp"
                 android:background="@color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/top_panel"
@@ -77,14 +78,21 @@
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginHorizontal="@dimen/medium_indent"
+                android:layout_marginHorizontal="@dimen/_16dp"
                 android:layout_marginBottom="50dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
-
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout

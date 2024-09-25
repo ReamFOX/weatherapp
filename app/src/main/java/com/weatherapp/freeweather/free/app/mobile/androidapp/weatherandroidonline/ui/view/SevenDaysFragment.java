@@ -1,4 +1,4 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.view;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
