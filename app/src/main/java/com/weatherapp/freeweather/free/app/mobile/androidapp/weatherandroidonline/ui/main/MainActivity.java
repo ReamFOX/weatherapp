@@ -18,7 +18,6 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.R;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.api.RetrofitClientInstance;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.api.WeatherApiService;
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model.WeatherData;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.repository.WeatherDataRepository;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.databinding.ActivityMainBinding;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.view.SearchFragment;

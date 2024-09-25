@@ -1,7 +1,5 @@
 package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model;
 
-import java.util.List;
-
 public class CurrentConditions {
     private String datetime;
     private long datetimeEpoch;

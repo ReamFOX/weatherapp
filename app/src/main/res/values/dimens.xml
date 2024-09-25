@@ -4,9 +4,10 @@
     <dimen name="_10dp">10dp</dimen>
     <dimen name="_12dp">12dp</dimen>
     <dimen name="_16dp">16dp</dimen>
+    <dimen name="_60dp">60dp</dimen>
     <dimen name="hourly_card_height">100dp</dimen>
     <dimen name="hourly_card_width">60dp</dimen>
-    <dimen name="_60dp">60dp</dimen>
     <dimen name="hourly_detailed_card_width">100dp</dimen>
     <dimen name="hourly_detailed_card_height">160dp</dimen>
+    <dimen name="fab_margin">48dp</dimen>
 </resources>

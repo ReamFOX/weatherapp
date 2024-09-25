@@ -57,7 +57,7 @@ public class TodayFragment extends Fragment {
                         weatherData.getDays().get(0).getTempmax()));
                 addHourlyForecast(weatherData);
                 binding.windValue.setText(
-                        getString(R.string.wind_value,weatherData.getCurrentConditions().getWindspeed())
+                        getString(R.string.wind_value, weatherData.getCurrentConditions().getWindspeed())
                 );
                 binding.humidityValue.setText(getString(R.string.value_with_persentage, weatherData.getCurrentConditions().getHumidity()));
                 binding.precipitationValue.setText(getString(R.string.value_with_persentage, weatherData.getCurrentConditions().getPrecip()));

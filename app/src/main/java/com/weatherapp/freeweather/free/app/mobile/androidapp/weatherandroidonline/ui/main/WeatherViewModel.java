@@ -1,12 +1,5 @@
 package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.main;
 
-import android.app.Application;
-import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -14,12 +7,6 @@ import androidx.lifecycle.ViewModel;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model.WeatherData;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.repository.WeatherDataRepository;
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.utils.Const;
-
-import java.util.Objects;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class WeatherViewModel extends ViewModel {
     private final WeatherDataRepository weatherDataRepository;

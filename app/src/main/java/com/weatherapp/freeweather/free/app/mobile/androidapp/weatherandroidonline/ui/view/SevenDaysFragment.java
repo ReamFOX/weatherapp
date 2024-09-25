@@ -21,7 +21,6 @@ import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonlin
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class SevenDaysFragment extends Fragment {
 

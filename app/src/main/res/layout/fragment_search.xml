@@ -4,20 +4,20 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/background_rain"
         android:clickable="true"
-        android:focusable="true"
-        android:background="@drawable/background_rain">
+        android:focusable="true">
 
-    <EditText
-        android:id="@+id/search_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginHorizontal="@dimen/_16dp"
-        android:layout_marginTop="24dp"
-        android:hint="Enter location"
-        android:inputType="text"
-        android:maxLines="1"
-        android:padding="10dp" />
-</RelativeLayout>
+        <EditText
+            android:id="@+id/search_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginHorizontal="@dimen/_16dp"
+            android:layout_marginTop="24dp"
+            android:hint="Enter location"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="10dp" />
+    </RelativeLayout>
 </layout>

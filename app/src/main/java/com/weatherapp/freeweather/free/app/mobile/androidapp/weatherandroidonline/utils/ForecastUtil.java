@@ -2,8 +2,6 @@ package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonli
 
 import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.R;
 
-import java.time.LocalDate;
-
 public class ForecastUtil {
 
     public static int getIcon(String icon) {
@@ -18,9 +16,9 @@ public class ForecastUtil {
         }
     }
 
-        public static String formatData(String inputDate) {
-            String[] parts = inputDate.split("-");
-            return parts[2] + "." + parts[1] + "." + parts[0];
-        }
+    public static String formatData(String inputDate) {
+        String[] parts = inputDate.split("-");
+        return parts[2] + "." + parts[1] + "." + parts[0];
+    }
 
 }

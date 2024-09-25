@@ -11,8 +11,6 @@ import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonlin
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherDataRepository {
     private final WeatherApiService weatherApiService;
@@ -23,26 +21,28 @@ public class WeatherDataRepository {
         this.weatherApiService = weatherApiService;
     }
 
+    //get weather data from api
     public LiveData<WeatherData> getWeatherData(String cityName) {
         weatherApiService.getWeatherData(cityName, Const.UNIT, Const.API_KEY, Const.CONTENT_TYPE)
                 .enqueue(new Callback<WeatherData>() {
-            @Override
-            public void onResponse(@NonNull Call<WeatherData> call, @NonNull Response<WeatherData> response) {
-                if (response.isSuccessful()) {
-                    weatherData.setValue(response.body());
-                } else {
-                    errorData.setValue("Error: " + response.message());
-                }
-            }
+                    @Override
+                    public void onResponse(@NonNull Call<WeatherData> call, @NonNull Response<WeatherData> response) {
+                        if (response.isSuccessful()) {
+                            weatherData.setValue(response.body());
+                        } else {
+                            errorData.setValue("Error: " + response.message());
+                        }
+                    }
 
-            @Override
-            public void onFailure(@NonNull Call<WeatherData> call, @NonNull Throwable throwable) {
-                errorData.setValue("Error: " + throwable.getMessage());
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Call<WeatherData> call, @NonNull Throwable throwable) {
+                        errorData.setValue("Error: " + throwable.getMessage());
+                    }
+                });
         return weatherData;
     }
 
+    //get errors from api
     public LiveData<String> getError() {
         return errorData;
     }
