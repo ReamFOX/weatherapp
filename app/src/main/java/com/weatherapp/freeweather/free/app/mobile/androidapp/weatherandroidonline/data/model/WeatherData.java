@@ -1,4 +1,4 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.model;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.data.model;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ public class WeatherData {
     private String address;
     private String description;
     private List<DayData> days;
-    private List<String> alerts;
     private CurrentConditions currentConditions;
 
     public String getAddress() {
@@ -32,14 +31,6 @@ public class WeatherData {
 
     public void setDays(List<DayData> days) {
         this.days = days;
-    }
-
-    public List<String> getAlerts() {
-        return alerts;
-    }
-
-    public void setAlerts(List<String> alerts) {
-        this.alerts = alerts;
     }
 
     public CurrentConditions getCurrentConditions() {

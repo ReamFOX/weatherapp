@@ -5,5 +5,4 @@
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
     android:singleLine="true"
-    android:textAlignment="textEnd"
-    />
+    android:textAlignment="textEnd" />

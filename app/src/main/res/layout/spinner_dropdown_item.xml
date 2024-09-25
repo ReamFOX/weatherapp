@@ -6,4 +6,4 @@
     android:ellipsize="marquee"
     android:padding="8dp"
     android:singleLine="true"
-    android:textAlignment="center" />
+    android:textAlignment="textStart" />

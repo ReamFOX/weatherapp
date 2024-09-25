@@ -1,4 +1,4 @@
-package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline;
+package com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.view.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.FourteenDaysFragment;
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.SevenDaysFragment;
-import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.TodayFragment;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.view.FourteenDaysFragment;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.view.SevenDaysFragment;
+import com.weatherapp.freeweather.free.app.mobile.androidapp.weatherandroidonline.ui.view.TodayFragment;
 
 import java.util.ArrayList;
 import java.util.List;

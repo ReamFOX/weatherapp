@@ -10,4 +10,14 @@
     <string name="precipitation">Precipitation</string>
     <string name="humidity">Humidity</string>
     <string name="pressure">Pressure</string>
+    <string name="temp_value">%.0f°</string>
+    <string name="min_max_temp_value">%.0f°/%.0f°</string>
+    <string name="wind_value">%.1f km/h</string>
+    <string name="value_with_persentage">%.0f%%</string>
+    <string name="pressure_value">%.0f mbar</string>
+    <string name="uvi_value">UVI: %d</string>
+    <string name="srad_value">SRAD: %.0f</string>
+    <string name="back_button_desc">Back button</string>
+    <string name="back">Back</string>
+    <string name="now">Now</string>
 </resources>
